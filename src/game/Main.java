@@ -11,6 +11,7 @@ public class Main {
 
       GameWindow game = new AsteroidsInfinity("Asteroids Infinity", 840, 480);
       game.run(1.0 / 30.0);
+      System.out.println("Finished");
       System.exit(0);
 
    }
