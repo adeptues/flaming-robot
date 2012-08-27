@@ -1,6 +1,3 @@
-/**
- * 
- */
 package game;
 
 import java.awt.Color;
@@ -13,10 +10,11 @@ import entities.Entity;
  * @author adeptues
  * 
  */
-public class Ship extends Entity {
+public class ShipGL extends Entity {
    private Path2D.Double ssTriangle;
 
-   public Ship(String iD, String humanReadableName) {
+   // TODO rewrite this to use open gl
+   public ShipGL(String iD, String humanReadableName) {
       super(iD, humanReadableName);
       // TODO Auto-generated constructor stub
       // construct our ship
@@ -28,6 +26,7 @@ public class Ship extends Entity {
       ssTriangle.closePath();
    }
 
+   // not called in this implementation
    @Override
    public void render(Graphics2D g) {
       // get coords to draw at from moveable component
@@ -50,5 +49,4 @@ public class Ship extends Entity {
       // TODO Auto-generated method stub
 
    }
-
 }
