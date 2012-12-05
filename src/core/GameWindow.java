@@ -21,6 +21,7 @@ import utils.Log;
  * @author adeptues
  * 
  */
+@Deprecated
 public abstract class GameWindow extends GameLoop {
 
    private JFrame frame;

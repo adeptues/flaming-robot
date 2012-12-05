@@ -71,7 +71,7 @@ public abstract class GameWindowLWJGL extends GameLoopLwjgl {
 
          GL11.glMatrixMode(GL11.GL_PROJECTION);
          GL11.glLoadIdentity();
-         GL11.glOrtho(0, 800, 0, 600, 1, -1);
+         GL11.glOrtho(1, 1, 1, 1, 1, -1);//this is for 2d drawing ie our drawing window space
          GL11.glMatrixMode(GL11.GL_MODELVIEW);
       } catch (LWJGLException e) {
          // TODO Auto-generated catch block

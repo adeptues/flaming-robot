@@ -13,6 +13,7 @@ import java.awt.Canvas;
  * @author adeptues
  * 
  */
+@Deprecated
 public abstract class GameLoop extends Canvas {
    /**
     * Run flag defines whether the main loop should run or not used as trigger.
