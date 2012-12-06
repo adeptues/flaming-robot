@@ -7,12 +7,12 @@ package maths;
  * @author adeptues
  *
  */
-public class Point2D {
+public class Vector2D {
 	
 	private float x;
 	private float y;
 		
-	public Point2D(float x, float y) {
+	public Vector2D(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}
