@@ -33,7 +33,7 @@ public class RenderSystem extends EntityProcessingSystem{
 	protected void process(Entity Entity) {
 		Position pos = positionMapper.get(Entity);
 		Renderable rend = renderableMapper.get(Entity);
-		
+		drawQuad(pos,rend);
 		
 	}
 	
