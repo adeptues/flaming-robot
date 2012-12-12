@@ -1,5 +1,11 @@
 package collisions;
 
+import java.awt.Point;
+
+import atemis.Line2D;
+
+import maths.Vector2D;
+
 public class LineIntersection {
 
    /**
@@ -120,6 +126,50 @@ public class LineIntersection {
       }
 
    } // end lineIntersection()
+   
+   public static Vector2D lineIntersect(Line2D line1,Line2D line2){
+	   int x1 = (int) line1.getP1().getX();
+	   int y1 = (int) line1.getP1().getY();
+	   int x2 = (int) line1.getP2().getX();
+	   int y2 = (int) line1.getP2().getY();
+	   int x3 = (int) line2.getP1().getX();
+	   int y3 = (int) line2.getP1().getY();
+	   int x4 = (int) line2.getP2().getX();
+	   int y4 = (int) line2.getP2().getY();
+	   Point point = lineIntersectj(x1, y1, x2, y2, x3, y3, x4, y4);
+	   if(point != null){
+		   Vector2D result = new Vector2D(new Float(point.getX()).floatValue(), new Float(point.getY()).floatValue());
+		   return result;
+	   }
+	   return null;
+   }
+   
+   /**
+    * 2d line interection method from http://www.java-gaming.org/topics/utils-essentials/22144/view.html
+    * @param x1
+    * @param y1
+    * @param x2
+    * @param y2
+    * @param x3
+    * @param y3
+    * @param x4
+    * @param y4
+    * @return
+    */
+   public static Point lineIntersectj(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
+	      double denom = (y4 - y3) * (x2 - x1) - (x4 - x3) * (y2 - y1);
+	      if (denom == 0.0) { // Lines are parallel.
+	         return null;
+	      }
+	      double ua = ((x4 - x3) * (y1 - y3) - (y4 - y3) * (x1 - x3))/denom;
+	      double ub = ((x2 - x1) * (y1 - y3) - (y2 - y1) * (x1 - x3))/denom;
+	        if (ua >= 0.0f && ua <= 1.0f && ub >= 0.0f && ub <= 1.0f) {
+	            // Get the intersection point.
+	            return new Point((int) (x1 + ua*(x2 - x1)), (int) (y1 + ua*(y2 - y1)));
+	        }
+
+	      return null;
+	   }
 
    /**
     * Routine to find whether a pair of lines intersect if they do and return true or false.<br>
